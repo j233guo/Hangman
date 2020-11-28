@@ -2,6 +2,8 @@ package hangman;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
+
 
 public class game {
     private int numGuess = 10;
@@ -132,9 +134,7 @@ public class game {
     }
 
     public void takeGuess(String l) {
-
         String upperL = l.toUpperCase();
-
         if (letterBank.contains(upperL)) {
 
             letterBank.remove(upperL);
@@ -155,6 +155,39 @@ public class game {
             }
         } else {
             System.out.println("You cannot choose " + upperL + ", try again");
+        }
+    }
+
+    public void startGame() {
+        Scanner input = new Scanner(System.in);
+        while(true) {
+            if (this.getCurrentLevel() == 6) {
+                System.out.println("\nYOU WIN");
+                break;
+            } else if (this.getNumGuess() == 0) {
+                System.out.println("\nYOU LOSE");
+                break;
+            } else {
+                System.out.println("\nLevel " + this.getCurrentLevel());
+                while (true) {
+                    if (this.getChosenWord().fullyGuessed()) {
+                        System.out.println(" ");
+                        this.getChosenWord().printWord();
+                        System.out.println("You passed level " + this.getCurrentLevel() + "!");
+                        this.nextLevel();
+                        break;
+                    } else if (this.getNumGuess() > 0) {
+                        System.out.println(" ");
+                        this.getChosenWord().printWord();
+                        this.printLetterBank();
+                        System.out.println("Guess a character");
+                        String guess = input.nextLine();
+                        this.takeGuess(guess);
+                    } else {
+                        break;
+                    }
+                }
+            }
         }
     }
 }
