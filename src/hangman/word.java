@@ -5,10 +5,6 @@ public class word {
 
     public word() {}
 
-    public word(letter[] letters) {
-        this.letters = letters;
-    }
-
     // Create a word from an existing array of letters
     public void setWord(letter[] letters) {
         this.letters = letters;

@@ -7,10 +7,6 @@ public abstract class wordBank {
 
     protected ArrayList<word> words;
 
-    public wordBank(ArrayList<word> words) {
-        this.words = words;
-    }
-
     public wordBank() {}
 
     public void init() {}

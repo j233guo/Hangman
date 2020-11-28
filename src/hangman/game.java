@@ -141,7 +141,7 @@ public class game {
 
             if (chosenWord.inWord(upperL)) {
                 chosenWord.setGuess(upperL);
-                System.out.println("Correct");
+                System.out.println("\nCorrect!");
             } else {
                 numGuess -= 1;
                 incorrectLetter.add(upperL);
@@ -150,6 +150,7 @@ public class game {
                     System.out.println("\n" + graphics[9]);
                 } else {
                     System.out.println("\n" + graphics[9 - numGuess]);
+                    System.out.println("You have " + numGuess + " chances left");
                 }
             }
         } else {
