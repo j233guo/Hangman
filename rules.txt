@@ -4,8 +4,8 @@ In this game you are going to guess some words from a word bank of your choice.
 1. The word you are going to guess is initially presented as a row of dashes representing letters.
 
 2. Each time you can take a guess by entering a letter that is available.
-    * If you suggest a letter that presents in the word, then it will become 'guessed' and shown, then the game will
-      prompt you to take a next guess.
+    * If you suggest a letter that presents in the word, then it will become 'guessed' and shown. The game will
+      then prompt you to take a next guess.
     * If you suggest a letter that does not present in the words, then the game will draw one element of a hanged man
       stick figure.
     * Used letters cannot be used again.
