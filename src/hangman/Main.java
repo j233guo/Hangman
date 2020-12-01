@@ -1,4 +1,6 @@
 package hangman;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class Main {
@@ -32,7 +34,17 @@ public class Main {
                 currentGame.startGame();
 
             } else if (response.equals("2")){ // read rules
-                System.out.println("There should be a file here, I will change this later.");
+                try {
+                    BufferedReader rules = new BufferedReader(new FileReader("rules.txt"));
+                    String line = rules.readLine();
+                    while (line != null) {
+                        System.out.println(line);
+                        line = rules.readLine();
+                    }
+                } catch(Exception ex){
+                    System.out.println("Error: " + ex.getMessage());
+                }
+
                 System.out.println("Enter 0 to return to main menu");
                 while (true) {
                     String ruleResponse = input.nextLine();
