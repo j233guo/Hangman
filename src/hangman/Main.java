@@ -2,10 +2,18 @@ package hangman;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
+import java.io.File;
 
 public class Main {
 
     public static void main(String[] args) {
+        File f1 = new File("moviewordbank.txt");
+        File f2 = new File("sportswordbank.txt");
+        if(!(f1.exists() && !f1.isDirectory()) || !(f2.exists() && !f2.isDirectory())) {
+            System.out.println("File missing, cannot start the application");
+            return;
+        }
+
         Scanner input = new Scanner(System.in);
         System.out.println("********** HANGMAN by Jiaming Guo **********");
 

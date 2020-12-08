@@ -1,20 +1,27 @@
 package hangman;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 
 public class movieWordBank extends wordBank{
 
     public movieWordBank() {}
 
-    final String[] wb = {"THE GODFATHER", "STAR WARS", "IRON MAN", "AVATAR", "IP MAN"};
-
     @Override
     public void init() {
         ArrayList<word> w = new ArrayList<>();
-        for (String s : wb) {
-            word curr = new word();
-            curr.parseWord(s);
-            w.add(curr);
+        try {
+            BufferedReader readWordBank = new BufferedReader(new FileReader("moviewordbank.txt"));
+            String line = readWordBank.readLine();
+            while (line != null) {
+                word curr = new word();
+                curr.parseWord(line);
+                w.add(curr);
+                line = readWordBank.readLine();
+            }
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex);
         }
         this.words = w;
     }
