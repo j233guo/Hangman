@@ -89,9 +89,12 @@ public class game {
         if (category.equals("1")) {
             System.out.println("You have chosen sports category!");
             this.words = new sportWordBank();
-        } else {
+        } else if (category.equals("2")) {
             System.out.println("You have chosen movie category!");
             this.words = new movieWordBank();
+        } else if (category.equals("3")) {
+            System.out.println("You have chosen Canadian Cities category!");
+            this.words = new CanadianCityWordBank();
         }
         words.init();
         initLetterBank();

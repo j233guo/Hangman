@@ -9,7 +9,10 @@ public class Main {
     public static void main(String[] args) {
         File f1 = new File("moviewordbank.txt");
         File f2 = new File("sportswordbank.txt");
-        if(!(f1.exists() && !f1.isDirectory()) || !(f2.exists() && !f2.isDirectory())) {
+        File f3 = new File("canadiancities.txt");
+        if(!(f1.exists() && !f1.isDirectory()) ||
+                !(f2.exists() && !f2.isDirectory()) ||
+                !(f3.exists() && !f3.isDirectory())) {
             System.out.println("File missing, cannot start the application");
             return;
         }
@@ -27,11 +30,13 @@ public class Main {
 
             if (response.equals("1")) { // game execution
                 System.out.println("\nPlease select a word category (enter 1 or 2)\n" +
-                                    " 1. Sports\n 2. Movies");
+                                    " 1. Sports\n 2. Movies \n 3. Canadian Cities");
                 String categoryResponse;
                 while(true) {
                     categoryResponse = input.nextLine();
-                    if (categoryResponse.equals("1") || categoryResponse.equals("2")) {
+                    if (categoryResponse.equals("1") ||
+                            categoryResponse.equals("2") ||
+                            categoryResponse.equals("3")) {
                         break;
                     } else {
                         System.out.println("That isn't an available category, please try again");
