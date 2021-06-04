@@ -1,13 +1,13 @@
 package hangman;
 
-public class letter {
+public class Letter {
     private String letter;
     private Boolean guessed;
 
-    public letter() {}
+    public Letter() {}
 
     // a letter is not guessed by default, unless its a blank space
-    public letter(String letter) {
+    public Letter(String letter) {
         this.letter = letter;
         if (letter.equals(" ")) {
             this.guessed = true;

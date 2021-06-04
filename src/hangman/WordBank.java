@@ -3,19 +3,19 @@ package hangman;
 import java.util.Random;
 import java.util.ArrayList;
 
-public abstract class wordBank {
+public abstract class WordBank {
 
-    protected ArrayList<word> words;
+    protected ArrayList<Word> words;
 
-    public wordBank() {}
+    public WordBank() {}
 
     public void init() {}
 
     // get a random word from word bank, and remove it from the word bank
-    public word getRandomWord() {
+    public Word getRandomWord() {
         Random randomNum = new Random();
         int index = randomNum.nextInt(words.size());
-        word w = words.get(index);
+        Word w = words.get(index);
         words.remove(index);
         return w;
     }

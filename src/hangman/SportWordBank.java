@@ -4,18 +4,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class movieWordBank extends wordBank{
+public class SportWordBank extends WordBank {
 
-    public movieWordBank() {}
+    public SportWordBank() {}
 
     @Override
     public void init() {
-        ArrayList<word> w = new ArrayList<>();
+        ArrayList<Word> w = new ArrayList<>();
         try {
-            BufferedReader readWordBank = new BufferedReader(new FileReader("moviewordbank.txt"));
+            BufferedReader readWordBank = new BufferedReader(new FileReader("sportswordbank.txt"));
             String line = readWordBank.readLine();
             while (line != null) {
-                word curr = new word();
+                Word curr = new Word();
                 curr.parseWord(line);
                 w.add(curr);
                 line = readWordBank.readLine();

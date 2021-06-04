@@ -7,6 +7,8 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args) {
+
+        // Verify if the word bank files exist
         File f1 = new File("moviewordbank.txt");
         File f2 = new File("sportswordbank.txt");
         File f3 = new File("canadiancities.txt");
@@ -21,6 +23,7 @@ public class Main {
         System.out.println("********** HANGMAN by Jiaming Guo **********");
 
         while(true) {
+            // Menu
             System.out.println("\nMENU\n" +
                     " 1. Start the game\n" +
                     " 2. View the rules of the game\n" +
@@ -28,7 +31,8 @@ public class Main {
                     "Please select an option (enter 1, 2 or 3)");
             String response = input.nextLine();
 
-            if (response.equals("1")) { // game execution
+            // game execution
+            if (response.equals("1")) {
                 System.out.println("\nPlease select a word category (enter 1 or 2)\n" +
                                     " 1. Sports\n 2. Movies \n 3. Canadian Cities");
                 String categoryResponse;
@@ -43,10 +47,11 @@ public class Main {
                     }
                 }
 
-                game currentGame = new game(categoryResponse);
+                Game currentGame = new Game(categoryResponse);
                 currentGame.startGame();
 
-            } else if (response.equals("2")){ // read rules
+            // read rules
+            } else if (response.equals("2")){
                 try {
                     BufferedReader rules = new BufferedReader(new FileReader("rules.txt"));
                     String line = rules.readLine();
@@ -57,7 +62,6 @@ public class Main {
                 } catch(Exception ex){
                     System.out.println("Error: " + ex.getMessage());
                 }
-
                 System.out.println("Enter 0 to return to main menu");
                 while (true) {
                     String ruleResponse = input.nextLine();
@@ -67,7 +71,9 @@ public class Main {
                         System.out.println("Enter 0 to return to main menu");
                     }
                 }
-            } else if (response.equals("3")) { // quit game
+
+            // quit game
+            } else if (response.equals("3")) {
                 System.out.println("Quitting..");
                 return;
             } else {

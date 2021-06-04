@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-public class game {
+public class Game {
     private int numGuess = 10;
     private int currentLevel = 1;
-    private wordBank words;
-    private word chosenWord;
+    private WordBank words;
+    private Word chosenWord;
     private ArrayList<String> letterBank = new ArrayList<>();
     private ArrayList<String> incorrectLetter = new ArrayList<>();
 
@@ -85,13 +85,13 @@ public class game {
         letterBank.addAll(Arrays.asList(allLetters).subList(0, 26));
     }
 
-    public game(String category) {
+    public Game(String category) {
         if (category.equals("1")) {
             System.out.println("You have chosen sports category!");
-            this.words = new sportWordBank();
+            this.words = new SportWordBank();
         } else if (category.equals("2")) {
             System.out.println("You have chosen movie category!");
-            this.words = new movieWordBank();
+            this.words = new MovieWordBank();
         } else if (category.equals("3")) {
             System.out.println("You have chosen Canadian Cities category!");
             this.words = new CanadianCityWordBank();
@@ -110,7 +110,7 @@ public class game {
         return numGuess;
     }
 
-    public word getChosenWord() {
+    public Word getChosenWord() {
         return chosenWord;
     }
 
